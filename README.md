@@ -78,7 +78,7 @@ Breaking News View
 
 News Details View
 * click on News tab to navigate to Breaking News View
-* click on News tab to navigate to Breaking News View
+* click on Read tab to navigate to Read View
 * click on Readlist tab to navigate to Readlist View
   
 Read View
