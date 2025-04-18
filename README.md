@@ -92,7 +92,7 @@ Readlist View
 * click on Read tab to navigate to Read View
 
 ## Wireframes
-<img src="./breaking-news-wireframe.jpg" width=600>
+<img src="./wireframe.jpg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
