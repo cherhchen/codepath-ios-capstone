@@ -72,7 +72,7 @@ Mobile App Dev - App Brainstorming Example
 
 ### 1. Breaking News
 - **Description**: A real-time, personalized news app that curates top global and local headlines based on user interests and location. Users can subscribe to categories like tech, sports, politics, and entertainment.
-- **Mobile:** Mobile is ideal for real-time alerts, location-based news delivery, and quick browsing. Push notifications play a key role in delivering time-sensitive updates.  
+- **Mobile:** Mobile is ideal for real-time alerts, location-based news delivery, and quick browsing.
 - **Story:** Keeps users informed with fast, relevant, and minimal-bias news. Combats news fatigue by filtering out low-impact headlines and clickbait.  
 - **Market:** News readers, professionals, travelers, and anyone who wants to stay informed without scrolling endlessly. Could target younger users turned off by traditional media.  
 - **Habit:** Users open the app multiple times daily or rely on push notifications for top stories. Customization and urgency drive repeated engagement.  
