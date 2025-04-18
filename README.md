@@ -31,9 +31,9 @@ This app uses the [News API](https://newsapi.org/docs/get-started) to display br
 * As a user, I want to see a list of the latest breaking news headlines as soon as I open the app.
 * As a user, I want to filter news by categories like Technology, Sports, Entertainment, etc.
 * As a user, I want to read a description and have a link to the full article by tapping on a headline.
-* As a user, I want to mark articles as "read" or "saved for later."
+* As a user, I want to mark articles as "Read" or "Readlist"
 * As a user, I want to see a list of my read articles.
-* As a user, I want to see a list of my saved for later articles.
+* As a user, I want to see a list of my saved for later (readlist) articles.
 * As a user, I want the app to load quickly and display content in a clean, minimal UI.
 
 **Optional Nice-to-have Stories**
