@@ -34,6 +34,10 @@ extension Article {
         return "Read"
     }
     
+    static var readlistKey: String {
+        return "Readlist"
+    }
+    
     static func save(_ articles: [Article], forKey key: String) {
         let defaults = UserDefaults.standard
         let encodeData = try! JSONEncoder().encode(articles)
@@ -64,5 +68,21 @@ extension Article {
         }
         Article.save(readArticles, forKey: Article.readKey)
         print(readArticles)
+    }
+    
+    func addToReadlist() {
+        var readlistArticles = Article.getArticles(forKey: Article.readlistKey)
+        readlistArticles.append(self)
+        Article.save(readlistArticles, forKey: Article.readlistKey)
+        print(readlistArticles)
+    }
+    
+    func removeFromReadlist() {
+        var readlistArticles = Article.getArticles(forKey: Article.readlistKey)
+        readlistArticles.removeAll { article in
+            return self == article
+        }
+        Article.save(readlistArticles, forKey: Article.readlistKey)
+        print(readlistArticles)
     }
 }

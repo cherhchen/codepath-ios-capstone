@@ -1,20 +1,19 @@
 //
-//  ReadViewController.swift
+//  ReadListViewController.swift
 //  Breaking News
 //
-//  Created by Cheryl Chen on 4/20/25.
+//  Created by Cheryl Chen on 4/21/25.
 //
 
 import UIKit
 import NukeExtensions
 
-class ReadViewController: UIViewController, UITableViewDataSource {
-
+class ReadListViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var emptyReadLabel: UILabel!
+    @IBOutlet weak var emptyReadlistLabel: UILabel!
     
-    var readArticles: [Article] = []
+    var readlistArticles: [Article] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,21 +27,21 @@ class ReadViewController: UIViewController, UITableViewDataSource {
         super.viewWillAppear(animated)
         
         defer {
-            emptyReadLabel.isHidden = !readArticles.isEmpty
+            emptyReadlistLabel.isHidden = !readlistArticles.isEmpty
         }
         
-        let articles = Article.getArticles(forKey: Article.readKey)
-        self.readArticles = articles
+        let articles = Article.getArticles(forKey: Article.readlistKey)
+        self.readlistArticles = articles
         tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return readArticles.count
+        return readlistArticles.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as! ArticleCell
-        let article = readArticles[indexPath.row]
+        let article = readlistArticles[indexPath.row]
         if let imagePath = article.urlToImage {
             let imageUrl = URL(string: imagePath)
             NukeExtensions.loadImage(with: imageUrl, into: cell.articleImageView)
@@ -53,11 +52,11 @@ class ReadViewController: UIViewController, UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
-        let selectedArticle = readArticles[selectedIndexPath.row]
+        let selectedArticle = readlistArticles[selectedIndexPath.row]
         guard let detailViewController = segue.destination as? DetailViewController else { return }
         detailViewController.article = selectedArticle
     }
-    
+
     /*
     // MARK: - Navigation
 

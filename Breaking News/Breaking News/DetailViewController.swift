@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var publishedDateLabel: UILabel!
     @IBOutlet weak var linkButton: UIButton!
     @IBOutlet weak var readButton: UIButton!
+    @IBOutlet weak var readlistButton: UIButton!
     
     var article: Article!
     
@@ -27,13 +28,20 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
         navigationItem.largeTitleDisplayMode = .never
         readButton.layer.cornerRadius = readButton.frame.width / 2
+        readlistButton.layer.cornerRadius = readlistButton.frame.width / 2
         
         let read = Article.getArticles(forKey: Article.readKey)
-        
         if read.contains(article) {
             readButton.isSelected = true
         } else {
             readButton.isSelected = false
+        }
+        
+        let readlist = Article.getArticles(forKey: Article.readlistKey)
+        if readlist.contains(article) {
+            readlistButton.isSelected = true
+        } else {
+            readlistButton.isSelected = false
         }
         
         titleLabel.text = article.title
@@ -100,6 +108,16 @@ class DetailViewController: UIViewController {
             article.removeFromRead()
         }
     }
+    
+    @IBAction func didTapReadlistButton(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            article.addToReadlist()
+        } else {
+            article.removeFromReadlist()
+        }
+    }
+    
     
     /*
     // MARK: - Navigation
