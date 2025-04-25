@@ -12,6 +12,16 @@ Here's a walkthrough  of implemented features:
 
 ![Walkthrough video](https://github.com/cherhchen/codepath-ios-capstone/blob/main/breaking-news-demo.gif)
 
+### Features
+- [X] User sees a list of the top news headlines as soon as I open the app.
+    - [X] User can click on each item and navigate to the details page of the news article.
+- [X] On the details page, user can see the source, author, publish date, image, and description of the article.
+    - [X] User can click a button to navigate to an external link containing the full article.
+    - [X] User can mark an article as "Read" by clicking green checkmark button.
+    - [X] User can mark an article as "Readlist" by clicking on the star button to save for later.
+- [X] On the Read page, user can see a list of articles that they have marked already read.
+- [X] On the Readlist page, user can see a list of articles that they have marked to read later.
+- [X] Users can navigate to different pages using the tab bar on the bottom.
 
 ### Description
 
@@ -102,7 +112,30 @@ Readlist View
 
 ## Schema 
 
-[This section will be completed in Unit 9]
+Article data schema to decode News API data:
+```
+struct NewsFeed: Decodable {
+    let status: String
+    let totalResults: Int
+    let articles: [Article]
+}
+
+struct Article: Codable, Equatable {
+    let source: Source
+    let author: String?
+    let title: String
+    let description: String?
+    let url: String
+    let urlToImage: String?
+    let publishedAt: String
+    let content: String?
+}
+
+struct Source: Codable, Equatable {
+    let id: String?
+    let name: String
+}
+```
 
 ### Models
 
